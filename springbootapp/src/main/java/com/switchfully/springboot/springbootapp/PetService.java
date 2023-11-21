@@ -1,16 +1,28 @@
 package com.switchfully.springboot.springbootapp;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class PetService {
+    private PetRepository petRepo;
+    private PetMapper petMap;
+
     public PetService(PetRepository petRepo, PetMapper petMap) {
         this.petRepo = petRepo;
         this.petMap = petMap;
     }
 
-    private PetRepository petRepo; // = new PetRepository();
-    private PetMapper petMap; // = new PetMapper();
+
     public List<PetDTO> getAllPets(  ) {
         return petMap.toDTO( petRepo.getAllPets() );
     }
+
+//    // --- Getters ------------------------------------------------------
+//    public PetRepository getPetRepo() {
+//        return petRepo;
+//    }
+//    public PetMapper getPetMap() {
+//        return petMap;
+//    }
 }

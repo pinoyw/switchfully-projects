@@ -6,10 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "pets")
 public class PetController {
+    private PetService petService;
+
+    public PetController(PetService petService) {
+        this.petService = petService;
+    }
 
     @GetMapping(value = "hello")
     public String helloPets() {
@@ -18,10 +22,13 @@ public class PetController {
 
     @GetMapping(value = "allpets",produces = "application/json")
     public List<PetDTO> getAllPets() {
-        PetService petService = new PetService();
         return petService.getAllPets();
-//        Will be fixed in codelab04
     }
+
+//    // --- Getters ------------------------------------------------------
+//    public PetService getPetService() {
+//        return petService;
+//    }
 }
 
 
