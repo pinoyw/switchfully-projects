@@ -1,4 +1,4 @@
-package com.switchfully.springboot.springbootapp;
+package com.switchfully.springboot.springbootapp.pet;
 
 public class Pet {
     private int id;

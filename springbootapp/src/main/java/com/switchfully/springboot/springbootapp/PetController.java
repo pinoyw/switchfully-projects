@@ -1,6 +1,7 @@
 package com.switchfully.springboot.springbootapp;
 
 
+import com.switchfully.springboot.springbootapp.pet.PetDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,16 +20,10 @@ public class PetController {
     public String helloPets() {
         return "Hello Pets";
     }
-
     @GetMapping(value = "allpets",produces = "application/json")
     public List<PetDTO> getAllPets() {
         return petService.getAllPets();
     }
-
-//    // --- Getters ------------------------------------------------------
-//    public PetService getPetService() {
-//        return petService;
-//    }
 }
 
 
