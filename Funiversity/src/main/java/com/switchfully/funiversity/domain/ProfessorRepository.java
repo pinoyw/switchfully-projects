@@ -18,6 +18,7 @@ public class ProfessorRepository {
         return professor;
     }
     public Collection<Professor> getAll() {
+
         return professorsById.values();
     }
 
